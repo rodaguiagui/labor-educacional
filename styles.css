@@ -7,6 +7,7 @@ body {
 
 /* Barra superior con texto */
 .top-bar {
+<<<<<<< HEAD
     background-color: #28a745;  /* Cambié el color a verde */
     color: white;
     padding: 10px;
@@ -17,13 +18,23 @@ body {
     top: 0;
     left: 0;
     z-index: 10;
+=======
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+>>>>>>> 9130c4dcfe27aa8b672d56f1fef01c3f9f4e6661
 }
 
 /* Estilo para la imagen de encabezado */
 .image-container {
     position: relative;
     text-align: center;
+<<<<<<< HEAD
     margin-top: 60px; /* Para dejar espacio para la barra superior */
+=======
+>>>>>>> 9130c4dcfe27aa8b672d56f1fef01c3f9f4e6661
 }
 
 .header-img {
@@ -31,6 +42,34 @@ body {
     height: 100vh;
     object-fit: cover;
     filter: blur(5px); /* Imagen con desenfoque */
+<<<<<<< HEAD
+}
+
+/* Estilo para el texto sobre la imagen */
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: Arial, sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.overlay-text h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.overlay-text p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+=======
+>>>>>>> 9130c4dcfe27aa8b672d56f1fef01c3f9f4e6661
 }
 
 /* Estilo para el texto sobre la imagen */
@@ -58,25 +97,7 @@ body {
     margin-right: auto;
 }
 
-/* Carrusel de imágenes */
-.carousel {
-    display: flex;
-    overflow-x: scroll;
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.carousel img {
-    width: 300px;
-    height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.carousel img:hover {
-    transform: scale(1.05);
-}
-
+<<<<<<< HEAD
 /* Contenedor de video */
 .video-container {
     margin-top: 20px;
@@ -84,6 +105,9 @@ body {
 }
 
 /* Estilo para los botones (si los hay) */
+=======
+/* Botones de llamada a la acción */
+>>>>>>> 9130c4dcfe27aa8b672d56f1fef01c3f9f4e6661
 .cta-buttons {
     display: flex;
     justify-content: center;
@@ -103,4 +127,23 @@ body {
 
 .cta-btn:hover {
     background-color: #218838;
+}
+
+/* Carrusel de imágenes */
+.carousel {
+    display: flex;
+    overflow-x: scroll;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.carousel img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.carousel img:hover {
+    transform: scale(1.05);
 }

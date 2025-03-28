@@ -3,32 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Labor Educacional</title>
+    <title>Labor Educacional - Antofagasta</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Barra superior con texto -->
+    <div class="top-bar">
+        <p>La importancia de estudiar en Antofagasta: ¡Una oportunidad única de crecimiento!</p>
+    </div>
 
-    <!-- Barra Superior con Texto -->
-    <header class="header-bar">
-        <p>La importancia de estudiar en Antofagasta</p>
-    </header>
-
-    <!-- Imagen Superior -->
+    <!-- Imagen superior con texto -->
     <header class="image-container">
         <img src="img/imagen_superior.jpeg" alt="Antofagasta" class="header-img">
+        <div class="overlay-text">
+            <h1>Estudia en Antofagasta</h1>
+            <p>Descubre todo lo que esta maravillosa ciudad tiene para ofrecerte como estudiante.</p>
+        </div>
     </header>
 
     <!-- Carrusel de imágenes -->
-    <div class="carousel">
-        <img src="img/imagen1.jpg" alt="Imagen 1">
-        <img src="img/imagen2.jpg" alt="Imagen 2">
-        <img src="img/imagen3.jpg" alt="Imagen 3">
-    </div>
+    <section id="carrusel" class="carousel">
+        <img src="img/imagen1.jpeg" alt="Imagen 1">
+        <img src="img/imagen2.jpeg" alt="Imagen 2">
+        <img src="img/imagen3.jpeg" alt="Imagen 3">
+    </section>
 
-    <!-- Video de YouTube -->
-    <div class="video-container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+    <!-- Video -->
+    <section class="video-container">
+        <video width="100%" controls>
+            <source src="video/educacional.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+        </video>
+    </section>
 
     <script src="script.js"></script>
 </body>

@@ -1,34 +1,61 @@
-/* Barra superior con texto */
-.header-bar {
-    background-color: #28a745;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    font-size: 1.2rem;
+/* Estilo general */
+body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra superior con texto */
+.top-bar {
+    background-color: #28a745;  /* Cambié el color a verde */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 10; /* Asegura que la barra esté siempre encima */
+    z-index: 10;
 }
 
-.header-bar p {
-    margin: 0;
-}
-
-/* Imagen superior con filtro de desenfoque */
+/* Estilo para la imagen de encabezado */
 .image-container {
     position: relative;
-    margin-top: 60px; /* Asegura que la imagen no quede debajo de la barra */
-    width: 100%;
+    text-align: center;
+    margin-top: 60px; /* Para dejar espacio para la barra superior */
 }
 
 .header-img {
     width: 100%;
-    height: auto;
-    filter: blur(5px); /* Imagen borrosa */
+    height: 100vh;
     object-fit: cover;
+    filter: blur(5px); /* Imagen con desenfoque */
+}
+
+/* Estilo para el texto sobre la imagen */
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: Arial, sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.overlay-text h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.overlay-text p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Carrusel de imágenes */
@@ -50,13 +77,13 @@
     transform: scale(1.05);
 }
 
-/* Contenedor del video */
+/* Contenedor de video */
 .video-container {
-    margin-top: 30px;
+    margin-top: 20px;
     text-align: center;
 }
 
-/* Estilo para los botones de llamada a la acción */
+/* Estilo para los botones (si los hay) */
 .cta-buttons {
     display: flex;
     justify-content: center;

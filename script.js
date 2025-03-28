@@ -1,20 +1,16 @@
-// Script para el carrusel de imágenes
-document.addEventListener("DOMContentLoaded", function() {
-    const carousel = document.querySelector(".carousel");
-    const images = document.querySelectorAll(".carousel img");
-    let index = 0;
-    const intervalTime = 3000; // 3 segundos para el desplazamiento automático
+// Obtener el contenedor del carrusel
+const carousel = document.querySelector('.carousel');
 
-    // Función para mover el carrusel
-    function moveCarousel() {
-        // Desplazar a la siguiente imagen
-        index = (index + 1) % images.length; // Mantiene el índice dentro del rango de las imágenes
-        carousel.scrollTo({
-            left: images[index].offsetLeft,
-            behavior: 'smooth'
-        });
-    }
+// Establecer la velocidad del desplazamiento (en milisegundos)
+const scrollSpeed = 3000; // 3 segundos
 
-    // Mueve el carrusel cada 3 segundos
-    setInterval(moveCarousel, intervalTime);
-});
+// Función para desplazar el carrusel automáticamente
+function autoScroll() {
+    carousel.scrollBy({
+        left: carousel.offsetWidth, // Desplazar el ancho del carrusel
+        behavior: 'smooth' // Efecto suave al desplazar
+    });
+}
+
+// Iniciar el desplazamiento automático
+setInterval(autoScroll, scrollSpeed);

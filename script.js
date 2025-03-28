@@ -1,25 +1,16 @@
-// Carrusel automático
-let index = 0;  // Índice de la imagen que se está mostrando
-const images = document.querySelectorAll('.carousel img');  // Selecciona todas las imágenes del carrusel
-const totalImages = images.length;  // Número total de imágenes
+// Script para el carrusel de imágenes
+const carousel = document.querySelector('.carousel');
+const images = carousel.querySelectorAll('img');
+let currentIndex = 0;
 
-function changeImage() {
-    // Ocultar la imagen actual
-    images[index].style.display = 'none';
-
-    // Incrementar el índice y hacer que vuelva al inicio si llegamos al final
-    index = (index + 1) % totalImages;
-
-    // Mostrar la siguiente imagen
-    images[index].style.display = 'block';
+function moveCarousel() {
+    currentIndex++;
+    if (currentIndex >= images.length) {
+        currentIndex = 0; // Volver al inicio del carrusel
+    }
+    const offset = -currentIndex * (images[0].width + 10); // Desplazar el carrusel
+    carousel.style.transform = `translateX(${offset}px)`;
 }
 
-// Inicializar el carrusel: Mostrar solo la primera imagen
-images.forEach((img, i) => {
-    if (i !== 0) {
-        img.style.display = 'none';
-    }
-});
-
-// Cambiar imagen cada 3 segundos (ajusta el tiempo según lo que necesites)
-setInterval(changeImage, 3000);
+// Mover el carrusel cada 3 segundos
+setInterval(moveCarousel, 3000); // 3000ms = 3 segundos

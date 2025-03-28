@@ -1,42 +1,55 @@
-<<<<<<< HEAD
-document.addEventListener('DOMContentLoaded', function() {
-    const carousel = document.querySelector('.carousel');
-    
-    // Mueve el carrusel hacia la izquierda automáticamente cada 3 segundos
-    setInterval(() => {
-        carousel.scrollBy({left: 300, behavior: 'smooth'});  // Desplazará 300px hacia la izquierda
-    }, 3000);
-});
-=======
-// script.js
+// JavaScript para carrusel de imágenes
 
-// Esperamos que el contenido de la página esté cargado antes de ejecutar el código
-document.addEventListener('DOMContentLoaded', function () {
+let images = document.querySelectorAll('.carousel img');  // Selecciona todas las imágenes dentro del carrusel
+let carousel = document.querySelector('.carousel');      // Selecciona el contenedor del carrusel
+let currentIndex = 0;                                    // Índice inicial para las imágenes
 
-    // Carrousel de imágenes (si tienes una serie de imágenes que se deben mover)
-    let currentIndex = 0; // Índice actual de la imagen
-    const images = document.querySelectorAll('.carousel img'); // Seleccionamos las imágenes dentro del carrusel
-
-    // Función para cambiar las imágenes
-    function showNextImage() {
-        images[currentIndex].style.display = 'none'; // Ocultamos la imagen actual
-        currentIndex = (currentIndex + 1) % images.length; // Calculamos el índice de la siguiente imagen
-        images[currentIndex].style.display = 'block'; // Mostramos la siguiente imagen
+// Función para mover el carrusel automáticamente
+function moveCarousel() {
+    // Comprobar si el índice es menor que el total de imágenes
+    if (currentIndex < images.length - 1) {
+        currentIndex++;  // Aumentar el índice
+    } else {
+        currentIndex = 0;  // Si es el último, volver al primero
     }
 
-    // Mostramos la primera imagen al cargar la página
-    images.forEach(image => image.style.display = 'none');
-    if (images.length > 0) images[0].style.display = 'block';
+    // Mover el contenedor del carrusel hacia la imagen correspondiente
+    carousel.scrollTo({
+        left: images[0].offsetWidth * currentIndex,  // Mover al siguiente índice
+        behavior: 'smooth',  // Desplazamiento suave
+    });
+}
 
-    // Configuramos el intervalo para cambiar de imagen cada 3 segundos
-    setInterval(showNextImage, 3000); // Cambia la imagen cada 3 segundos (3000 ms)
+// Llamar a la función `moveCarousel` cada 3 segundos (3000ms)
+setInterval(moveCarousel, 3000);
 
-    // Si tienes algún video, puedes hacer que se reproduzca automáticamente
-    const video = document.querySelector('#myVideo'); // Asegúrate de que tu video tenga id="myVideo"
-    if (video) {
-        video.autoplay = true;  // Reproduce el video automáticamente
-        video.loop = true;      // Hace que el video se repita
+// También puedes agregar controles manuales para el carrusel si lo deseas
+// Botón para mover hacia la izquierda
+document.querySelector('.prev-btn').addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;  // Disminuir el índice
+    } else {
+        currentIndex = images.length - 1;  // Si es el primero, ir al último
     }
 
+    // Mover el contenedor hacia la imagen anterior
+    carousel.scrollTo({
+        left: images[0].offsetWidth * currentIndex,
+        behavior: 'smooth',
+    });
 });
->>>>>>> 77729f95603c72935bf1a1aeb53cd11beb03b4e5
+
+// Botón para mover hacia la derecha
+document.querySelector('.next-btn').addEventListener('click', () => {
+    if (currentIndex < images.length - 1) {
+        currentIndex++;  // Aumentar el índice
+    } else {
+        currentIndex = 0;  // Si es el último, volver al primero
+    }
+
+    // Mover el contenedor hacia la imagen siguiente
+    carousel.scrollTo({
+        left: images[0].offsetWidth * currentIndex,
+        behavior: 'smooth',
+    });
+});

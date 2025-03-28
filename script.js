@@ -1,16 +1,31 @@
-// Obtener el contenedor del carrusel
-const carousel = document.querySelector('.carousel');
+// Carrusel de imágenes: Manejar el desplazamiento automático de las imágenes
+let carousel = document.querySelector('.carousel');
+let images = document.querySelectorAll('.carousel img');
+let currentIndex = 0;
 
-// Establecer la velocidad del desplazamiento (en milisegundos)
-const scrollSpeed = 3000; // 3 segundos
-
-// Función para desplazar el carrusel automáticamente
-function autoScroll() {
-    carousel.scrollBy({
-        left: carousel.offsetWidth, // Desplazar el ancho del carrusel
-        behavior: 'smooth' // Efecto suave al desplazar
-    });
+// Función para cambiar la imagen en el carrusel
+function showNextImage() {
+    images[currentIndex].style.display = 'none'; // Oculta la imagen actual
+    currentIndex = (currentIndex + 1) % images.length; // Siguiente imagen
+    images[currentIndex].style.display = 'block'; // Muestra la siguiente imagen
 }
 
-// Iniciar el desplazamiento automático
-setInterval(autoScroll, scrollSpeed);
+// Inicializa el carrusel mostrando solo la primera imagen
+images.forEach((img, index) => {
+    if (index !== 0) {
+        img.style.display = 'none'; // Oculta las imágenes que no sean la primera
+    }
+});
+
+// Configura el carrusel para cambiar de imagen cada 3 segundos
+setInterval(showNextImage, 3000);
+
+// Botones de llamada a la acción (CTA)
+const ctaButtons = document.querySelectorAll('.cta-btn');
+
+ctaButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('¡Gracias por interesarte! Estamos en contacto.');
+    });
+});

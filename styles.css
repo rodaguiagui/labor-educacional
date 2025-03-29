@@ -1,110 +1,69 @@
-/* Barra superior con el título */
-.title-bar {
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra de título */
+.titulo {
     background-color: #28a745;
     color: white;
     padding: 20px;
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    position: relative;
-    z-index: 10;
+    font-size: 1.5rem;
 }
 
-/* Estilo para la imagen de encabezado */
-.image-container {
-    position: relative;
-    text-align: center;
-}
-
-.header-img {
+/* Imagen superior */
+.imagen-superior img {
     width: 100%;
     height: auto;
-    filter: blur(5px); /* Hace que la imagen se vea borrosa */
-    object-fit: cover;
 }
 
-/* Estilo para el texto sobre la imagen */
-.overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-family: Arial, sans-serif;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    z-index: 1;
-}
-
-.overlay-text h1 {
-    font-size: 2.5rem;
-    margin: 0;
-}
-
-.overlay-text p {
-    font-size: 1.2rem;
-    margin: 10px 0;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Estilo para el texto debajo de la imagen */
-.text-section {
+/* Texto informativo */
+.texto {
     padding: 20px;
-    text-align: center;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-.text-section h2 {
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-.text-section p {
-    font-size: 1.2rem;
     max-width: 800px;
-    margin: 0 auto;
+    margin: auto;
 }
 
-/* Carrusel de imágenes */
-.carousel {
+/* Carrusel */
+.carrusel {
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    position: relative;
+    padding: 20px 0;
+}
+
+.carrusel-container {
     display: flex;
-    overflow-x: scroll;
-    gap: 10px;
-    margin-top: 20px;
+    width: 300%;
+    animation: desplazar 10s linear infinite;
 }
 
-.carousel img {
-    width: 300px;
-    height: auto;
+.carrusel-container img {
+    width: 33.33%;
     border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
 }
 
-.carousel img:hover {
-    transform: scale(1.05);
+/* Animación del carrusel */
+@keyframes desplazar {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.33%); }
 }
 
-/* Botones de llamada a la acción */
-.cta-buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+/* Video */
+.video {
+    margin: 40px auto;
+    max-width: 800px;
 }
 
-.cta-btn {
-    background-color: #28a745;
-    color: white;
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    margin: 10px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+.video h2 {
+    margin-bottom: 10px;
 }
 
-.cta-btn:hover {
-    background-color: #218838;
+.video video {
+    width: 100%;
+    border-radius: 8px;
 }

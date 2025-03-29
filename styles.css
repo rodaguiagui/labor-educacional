@@ -8,7 +8,7 @@ body {
 
 /* Barra de título */
 .titulo {
-    background-color: #28a745;
+    background-color: #000000; /* Cambiado a negro */
     color: white;
     padding: 20px;
     font-size: 1.5rem;
@@ -39,11 +39,12 @@ body {
 .carrusel-container {
     display: flex;
     width: 300%;
-    animation: desplazar 10s linear infinite;
+    transition: transform 1s ease; /* Agregado para suavizar el desplazamiento */
 }
 
 .carrusel-container img {
     width: 33.33%;
+    height: auto; /* Mantener la proporción de la imagen */
     border-radius: 8px;
 }
 
@@ -63,7 +64,8 @@ body {
     margin-bottom: 10px;
 }
 
-.video video {
+.video iframe {
     width: 100%;
+    height: auto;
     border-radius: 8px;
 }

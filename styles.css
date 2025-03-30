@@ -1,71 +1,61 @@
-/* Estilos generales */
+/* Estilos Generales */
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
 }
 
-/* Barra de título */
-.titulo {
-    background-color: #000000; /* Cambiado a negro */
-    color: white;
+header.titulo {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
     padding: 20px;
-    font-size: 1.5rem;
 }
 
-/* Imagen superior */
+section {
+    padding: 20px;
+    margin: 10px;
+}
+
+/* Imagen Superior */
 .imagen-superior img {
     width: 100%;
     height: auto;
-}
-
-/* Texto informativo */
-.texto {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
+    border-radius: 8px;
 }
 
 /* Carrusel */
 .carrusel {
-    overflow: hidden;
     width: 100%;
-    white-space: nowrap;
-    position: relative;
-    padding: 20px 0;
+    overflow: hidden;
+    margin: 20px 0;
 }
 
 .carrusel-container {
     display: flex;
-    width: 300%;
-    transition: transform 1s ease; /* Agregado para suavizar el desplazamiento */
+    animation: desplazamientoInfinito 15s linear infinite;
 }
 
 .carrusel-container img {
-    width: 33.33%;
-    height: auto; /* Mantener la proporción de la imagen */
+    width: 100%;
+    flex-shrink: 0;
     border-radius: 8px;
 }
 
-/* Animación del carrusel */
-@keyframes desplazar {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-33.33%); }
+/* Animación de desplazamiento */
+@keyframes desplazamientoInfinito {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 /* Video */
-.video {
-    margin: 40px auto;
-    max-width: 800px;
-}
-
-.video h2 {
-    margin-bottom: 10px;
-}
-
 .video iframe {
     width: 100%;
-    height: auto;
+    border: none;
     border-radius: 8px;
 }

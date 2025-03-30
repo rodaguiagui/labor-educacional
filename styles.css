@@ -52,7 +52,7 @@ body {
 
 /* Imágenes dentro del carrusel */
 .carrusel-container img {
-    width: calc(100% / 3); /* Divide el ancho total entre el número de imágenes (en este caso 3) */
+    width: calc(100% / 4); /* Divide el ancho total entre el número de imágenes (en este caso 3) */
     flex-shrink: 0;
     object-fit: cover;
 }

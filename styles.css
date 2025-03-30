@@ -4,20 +4,50 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
+    text-align: center; /* Centra todo el contenido de texto */
 }
 
-/* Contenedor del carrusel */
+/* Barra de título */
+.titulo h1 {
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+/* Imagen superior */
+.imagen-superior img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Texto informativo */
+.texto {
+    margin: 20px;
+}
+
+.texto h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.texto p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Carrusel de imágenes */
 .carrusel {
     width: 100%;
     overflow: hidden;
     position: relative;
 }
 
-/* Contenedor interno que alberga las imágenes */
+/* Contenedor del carrusel */
 .carrusel-container {
     display: flex;
-    width: 200%; /* Esto asegura que el contenedor pueda albergar las imágenes duplicadas */
-    animation: desplazamientoInfinito 60s linear infinite; /* Ajusta la duración según tu preferencia */
+    width: 200%;
+    animation: desplazamientoInfinito 60s linear infinite;
+    justify-content: center; /* Centra las imágenes dentro del contenedor */
 }
 
 /* Imágenes dentro del carrusel */
@@ -33,6 +63,32 @@ body {
         transform: translateX(0);
     }
     to {
-        transform: translateX(-50%); /* Mueve el carrusel a la mitad, mostrando las imágenes duplicadas */
+        transform: translateX(-50%);
+    }
+}
+
+/* Estilos del video */
+.video {
+    margin-top: 30px;
+}
+
+.video h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+/* Responder a pantallas pequeñas */
+@media (max-width: 768px) {
+    .titulo h1 {
+        font-size: 1.5rem;
+    }
+    .texto h2 {
+        font-size: 1.2rem;
+    }
+    .texto p {
+        font-size: 0.9rem;
+    }
+    .video h2 {
+        font-size: 1.2rem;
     }
 }

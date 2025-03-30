@@ -34,7 +34,7 @@ section {
 
 .carrusel-container {
     display: flex;
-    animation: desplazamientoInfinito 15s linear infinite;
+    animation: desplazamientoInfinito 300s linear infinite;
 }
 
 .carrusel-container img {

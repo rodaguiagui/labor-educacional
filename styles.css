@@ -1,61 +1,38 @@
-/* Estilos Generales */
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f0f0f0;
 }
 
-header.titulo {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
-
-section {
-    padding: 20px;
-    margin: 10px;
-}
-
-/* Imagen Superior */
-.imagen-superior img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-/* Carrusel */
+/* Contenedor del carrusel */
 .carrusel {
     width: 100%;
     overflow: hidden;
-    margin: 20px 0;
+    position: relative;
 }
 
+/* Contenedor interno que alberga las imágenes */
 .carrusel-container {
     display: flex;
-    animation: desplazamientoInfinito 300s linear infinite;
+    width: 200%; /* Esto asegura que el contenedor pueda albergar las imágenes duplicadas */
+    animation: desplazamientoInfinito 60s linear infinite; /* Ajusta la duración según tu preferencia */
 }
 
+/* Imágenes dentro del carrusel */
 .carrusel-container img {
-    width: 100%;
+    width: calc(100% / 3); /* Divide el ancho total entre el número de imágenes (en este caso 3) */
     flex-shrink: 0;
-    border-radius: 8px;
+    object-fit: cover;
 }
 
-/* Animación de desplazamiento */
+/* Animación para el desplazamiento continuo */
 @keyframes desplazamientoInfinito {
-    0% {
+    from {
         transform: translateX(0);
     }
-    100% {
-        transform: translateX(-50%);
+    to {
+        transform: translateX(-50%); /* Mueve el carrusel a la mitad, mostrando las imágenes duplicadas */
     }
-}
-
-/* Video */
-.video iframe {
-    width: 100%;
-    border: none;
-    border-radius: 8px;
 }
